@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twin — Agentic Financial Decision Twin</title>
+<meta name="description" content="A live digital twin of your finances that simulates the future before you decide. Private, encrypted, and grounded in your real data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="wrap nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="nav__mark">◆</span>TWIN
+    </a>
+    <nav class="nav__links">
+      <a href="#problem">Problem</a>
+      <a href="#solution">Solution</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#agents">Agents</a>
+      <a href="#users">Who it's for</a>
+      <a href="#trust">Trust</a>
+    </nav>
+    <a href="#cta" class="btn btn--small">Request a walkthrough</a>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav__mobile" id="mobileNav">
+    <a href="#problem">Problem</a>
+    <a href="#solution">Solution</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#agents">Agents</a>
+    <a href="#users">Who it's for</a>
+    <a href="#trust">Trust</a>
+    <a href="#cta" class="btn btn--small">Request a walkthrough</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero__inner">
+    <div class="hero__text">
+      <p class="eyebrow">Agentic Financial Decision Twin</p>
+      <h1 class="hero__headline">
+        Test the decision <em>before</em> you make it.
+      </h1>
+      <p class="hero__sub">
+        Twin builds a living model of your finances — personal, startup, or enterprise —
+        and runs the future a few different ways before it ever recommends a move.
+        Every instance is encrypted and isolated, so the data never has to leave home.
+      </p>
+      <div class="hero__actions">
+        <a href="#how-it-works" class="btn btn--primary">See how it works</a>
+        <a href="#problem" class="btn btn--ghost">Read the problem</a>
+      </div>
+      <dl class="hero__facts">
+        <div>
+          <dt>Built for</dt>
+          <dd>Individuals · Startups · Enterprises</dd>
+        </div>
+        <div>
+          <dt>Powered by</dt>
+          <dd>Six-agent orchestration + RAG</dd>
+        </div>
+        <div>
+          <dt>Data policy</dt>
+          <dd>One private instance per user</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="hero__console" aria-hidden="false">
+      <div class="console">
+        <div class="console__head">
+          <span class="console__title">Scenario Console</span>
+          <span class="console__tag" id="consoleTag">simulating…</span>
+        </div>
+        <p class="console__query">"Should we prepay the term loan or extend runway instead?"</p>
+        <div class="console__rows" id="consoleRows">
+          <div class="console__row" data-row="0">
+            <span class="console__label">Outcome 1 — Prepay loan</span>
+            <span class="console__meter"><i style="width:52%"></i></span>
+            <span class="console__value">Runway 6.1 mo</span>
+          </div>
+          <div class="console__row" data-row="1">
+            <span class="console__label">Outcome 2 — Hold cash</span>
+            <span class="console__meter"><i style="width:71%"></i></span>
+            <span class="console__value">Runway 9.4 mo</span>
+          </div>
+          <div class="console__row" data-row="2">
+            <span class="console__label">Outcome 3 — Partial prepay</span>
+            <span class="console__meter"><i style="width:83%"></i></span>
+            <span class="console__value">Runway 8.7 mo</span>
+          </div>
+        </div>
+        <div class="console__pick">
+          <span class="console__picklabel">Recommended</span>
+          <span class="console__pickvalue" id="pickValue">Outcome 3 — Partial prepay, preserve buffer</span>
+        </div>
+      </div>
+      <p class="hero__caption">Illustrative simulation output — not live data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="section" id="problem">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">The problem</p>
+      <h2>Financial decisions are still made in the dark.</h2>
+    </div>
+    <div class="split">
+      <div class="split__text">
+        <p>
+          CFOs, individual investors, and founders make their biggest financial calls the same way
+          they always have — on personal judgment, a spreadsheet, and whatever data happened to be
+          on hand. There is no system that tests a decision's downstream effects before the money moves.
+        </p>
+        <p>
+          The technology to do better has existed for a while. What's held it back is trust.
+          Handing sensitive financial data to a shared AI model — one you don't control and can't fully
+          see inside — is a risk most institutions and individuals aren't willing to take.
+        </p>
+      </div>
+      <div class="callouts">
+        <div class="callout">
+          <span class="callout__num">01</span>
+          <h3>Judgment, not evidence</h3>
+          <p>Decisions rest on experience and static reports, not on modelled outcomes.</p>
+        </div>
+        <div class="callout">
+          <span class="callout__num">02</span>
+          <h3>No dry run</h3>
+          <p>Once capital moves, there's nothing to check the decision against beforehand.</p>
+        </div>
+        <div class="callout">
+          <span class="callout__num">03</span>
+          <h3>The trust gap</h3>
+          <p>Nobody wants to hand private financials to a model they don't control.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOLUTION ============ -->
+<section class="section section--tint" id="solution">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">The solution</p>
+      <h2>A digital twin of your finances, run privately.</h2>
+      <p class="section__lede">
+        Twin is a multi-agent AI platform that runs as its own encrypted, isolated instance for every
+        individual, startup, and enterprise. It builds a live twin of your finances, answers questions
+        in plain language, and simulates every major decision before it's finalised.
+      </p>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar">
+        <span class="pillar__index">Live twin</span>
+        <h3>A model that mirrors reality</h3>
+        <p>
+          The twin tracks income, burn, treasury, or whatever matters for your kind of finances —
+          continuously, not as a quarterly snapshot.
+        </p>
+      </article>
+      <article class="pillar">
+        <span class="pillar__index">Ask, don't dig</span>
+        <h3>Grounded in your real data</h3>
+        <p>
+          A conversational agent, powered by retrieval-augmented generation, answers financial
+          questions using your actual numbers — never a generic response.
+        </p>
+      </article>
+      <article class="pillar">
+        <span class="pillar__index">Private by design</span>
+        <h3>Your data never leaves home</h3>
+        <p>
+          Every user gets a dedicated, encrypted instance. Nothing is pooled, shared, or used
+          to train anything outside your walls.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section" id="how-it-works">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">How it works</p>
+      <h2>Four layers, one decision at a time.</h2>
+    </div>
+
+    <div class="stack">
+      <div class="stack__step">
+        <span class="stack__no">1</span>
+        <div>
+          <h3>Interface</h3>
+          <p>You ask a question or log a decision — web, app, or chat.</p>
+        </div>
+      </div>
+      <div class="stack__connector"></div>
+      <div class="stack__step">
+        <span class="stack__no">2</span>
+        <div>
+          <h3>Orchestrator</h3>
+          <p>The manager breaks the request into steps and assigns the right agents.</p>
+        </div>
+      </div>
+      <div class="stack__connector"></div>
+      <div class="stack__step">
+        <span class="stack__no">3</span>
+        <div>
+          <h3>Agent team</h3>
+          <p>Six specialists — each with one job — do the actual thinking.</p>
+        </div>
+      </div>
+      <div class="stack__connector"></div>
+      <div class="stack__step">
+        <span class="stack__no">4</span>
+        <div>
+          <h3>Digital twin</h3>
+          <p>The simulation engine tests the decision before anything is recommended.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack__foot">
+      <div class="stack__footcard">
+        <h4>Data layer</h4>
+        <p>Banks, market data, and company systems feed the twin.</p>
+      </div>
+      <div class="stack__footcard">
+        <h4>Knowledge &amp; memory</h4>
+        <p>Facts about the user and a record of past decisions, kept alongside.</p>
+      </div>
+    </div>
+
+    <div class="simflow">
+      <div class="simflow__head">
+        <h3>Inside the twin: how a simulation runs</h3>
+        <p>Think of it as a flight simulator for money. Before a real decision — a loan prepayment,
+        a hire, an FX hedge — the twin quietly runs the future a few different ways and shows what happens.</p>
+      </div>
+      <div class="simflow__diagram">
+        <div class="simflow__node simflow__node--input">Current state</div>
+        <div class="simflow__node simflow__node--input">Goals &amp; limits</div>
+        <div class="simflow__arrow">→</div>
+        <div class="simflow__node simflow__node--engine">Simulation engine</div>
+        <div class="simflow__arrow">→</div>
+        <div class="simflow__outcomes">
+          <div class="simflow__node simflow__node--outcome">Outcome 1</div>
+          <div class="simflow__node simflow__node--outcome">Outcome 2</div>
+          <div class="simflow__node simflow__node--outcome">Outcome 3</div>
+        </div>
+        <div class="simflow__arrow">→</div>
+        <div class="simflow__node simflow__node--pick">Best outcome, picked &amp; explained</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGENTS ============ -->
+<section class="section section--tint" id="agents">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">The agent team</p>
+      <h2>Six specialists. One job each.</h2>
+      <p class="section__lede">
+        Rather than a swarm of micro-agents, Twin groups the work into six clear roles,
+        each reporting back to the orchestrator.
+      </p>
+    </div>
+
+    <div class="agents">
+      <article class="agent">
+        <span class="agent__tag">Understand</span>
+        <p>Pulls in and cleans up the user's financial data.</p>
+      </article>
+      <article class="agent">
+        <span class="agent__tag">Watch</span>
+        <p>Constantly checks for risk — low cash, bad debt, fraud, FX exposure.</p>
+      </article>
+      <article class="agent">
+        <span class="agent__tag">Simulate</span>
+        <p>Runs "what-if" tests on the digital twin.</p>
+      </article>
+      <article class="agent">
+        <span class="agent__tag">Recommend</span>
+        <p>Picks the best option based on the simulation results.</p>
+      </article>
+      <article class="agent">
+        <span class="agent__tag">Teach</span>
+        <p>Explains the recommendation in plain language.</p>
+      </article>
+      <article class="agent">
+        <span class="agent__tag">Check</span>
+        <p>Confirms it's compliant, and explains why the call was made.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USERS ============ -->
+<section class="section" id="users">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">One core, three users</p>
+      <h2>The same system underneath. Only the data changes.</h2>
+    </div>
+
+    <div class="tabs">
+      <div class="tabs__nav" role="tablist">
+        <button class="tabs__btn is-active" role="tab" data-tab="individuals">Individuals</button>
+        <button class="tabs__btn" role="tab" data-tab="startups">Startups</button>
+        <button class="tabs__btn" role="tab" data-tab="enterprises">Enterprises</button>
+      </div>
+
+      <div class="tabs__panel is-active" data-panel="individuals">
+        <div class="tabs__grid">
+          <div><h4>The twin tracks</h4><p>Income, expenses, savings, loans, goals.</p></div>
+          <div><h4>Main worry</h4><p>"Will I hit my goals?"</p></div>
+          <div><h4>Data source</h4><p>Bank apps and credit score.</p></div>
+        </div>
+      </div>
+      <div class="tabs__panel" data-panel="startups">
+        <div class="tabs__grid">
+          <div><h4>The twin tracks</h4><p>Revenue, burn rate, runway, hiring, fundraising.</p></div>
+          <div><h4>Main worry</h4><p>"Will we run out of cash?"</p></div>
+          <div><h4>Data source</h4><p>Accounting software and payroll.</p></div>
+        </div>
+      </div>
+      <div class="tabs__panel" data-panel="enterprises">
+        <div class="tabs__grid">
+          <div><h4>The twin tracks</h4><p>Treasury, cash flow, suppliers, FX, compliance.</p></div>
+          <div><h4>Main worry</h4><p>"Are we exposed to risk?"</p></div>
+          <div><h4>Data source</h4><p>ERP systems (SAP, Oracle) and treasury platforms.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST ============ -->
+<section class="section section--dark" id="trust">
+  <div class="wrap">
+    <div class="section__head section__head--dark">
+      <p class="eyebrow eyebrow--dark">Trust &amp; security</p>
+      <h2>Your instance. Your data. Nobody else's.</h2>
+      <p class="section__lede section__lede--dark">
+        The reason financial AI hasn't been adopted more widely isn't capability — it's trust.
+        Twin is built around that constraint, not in spite of it.
+      </p>
+    </div>
+
+    <div class="trust__grid">
+      <div class="trust__item">
+        <h3>Isolated by default</h3>
+        <p>Every individual, startup, and enterprise runs on its own independent instance —
+        never a shared model, never pooled data.</p>
+      </div>
+      <div class="trust__item">
+        <h3>Encrypted end to end</h3>
+        <p>Financial data is encrypted at rest and in transit, inside a boundary the user controls.</p>
+      </div>
+      <div class="trust__item">
+        <h3>Compliance built in</h3>
+        <p>The Check agent verifies every recommendation against relevant regulation
+        before it reaches you — and explains why.</p>
+      </div>
+      <div class="trust__item">
+        <h3>Evidence, not guesses</h3>
+        <p>Every recommendation is backed by a simulation on your own data, not a generic
+        model completion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEMORY / TECH ============ -->
+<section class="section" id="memory">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">Why it gets smarter</p>
+      <h2>Memory, not just data.</h2>
+    </div>
+    <div class="memory">
+      <div class="memory__item">
+        <span class="memory__label">Knowledge graph</span>
+        <p>Facts and relationships — this user has a loan, this company owes this supplier.</p>
+      </div>
+      <div class="memory__item">
+        <span class="memory__label">Vector database</span>
+        <p>Finds similar past situations or literacy content when a question needs context.</p>
+      </div>
+      <div class="memory__item">
+        <span class="memory__label">Long-term memory</span>
+        <p>Remembers past decisions and what actually happened, so future advice improves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="cta">
+  <div class="wrap cta__inner">
+    <h2>See the twin run on a real decision.</h2>
+    <p>Built for the Deloitte USI Capstone Program 2026. Architecture, agent design, and
+      simulation flow available for deeper technical review.</p>
+    <a href="mailto:harshit.maheshwari@example.com" class="btn btn--primary">Request a walkthrough</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>
+      <span class="nav__brand nav__brand--footer"><span class="nav__mark">◆</span>TWIN</span>
+      <p class="footer__tag">Agentic Financial Decision Twin — simulate before you decide.</p>
+    </div>
+    <div class="footer__meta">
+      <p>Harshit Maheshwari · Manipal University Jaipur</p>
+      <p>Deloitte USI Capstone Program 2026</p>
+      <p><a href="https://github.com/Harshitmaheshwari10" target="_blank" rel="noopener">github.com/Harshitmaheshwari10</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
